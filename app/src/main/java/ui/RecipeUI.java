@@ -73,22 +73,27 @@ public class RecipeUI {
         if (displayrecips == null) {
             System.out.println("No recipes available.");
         } else {
-            System.out.println("Recipes:");
-            System.out.println("-----------------------------------");
-            for (String printDisplay : displayrecips) {
-                String[] keyValue = printDisplay.split(",");
-                System.err.println("Recipe Name: " + keyValue[0]);
-                System.out.print("Main Ingredients: ");
-                for (int i = 1; i < keyValue.length; i++) {
-                    if (i == keyValue.length - 1) {
-                        System.out.println(keyValue[i]);
-                    } else {
-                        System.out.print(keyValue[i] + ",");
-                    }
-
-                }
+            if (displayrecips.isEmpty()) {
+                System.out.println("No recipes available.");
+            } else {
+                System.out.println("Recipes:");
                 System.out.println("-----------------------------------");
+                for (String printDisplay : displayrecips) {
+                    String[] keyValue = printDisplay.split(",");
+                    System.err.println("Recipe Name: " + keyValue[0]);
+                    System.out.print("Main Ingredients: ");
+                    for (int i = 1; i < keyValue.length; i++) {
+                        if (i == keyValue.length - 1) {
+                            System.out.println(keyValue[i]);
+                        } else {
+                            System.out.print(keyValue[i] + ",");
+                        }
+
+                    }
+                    System.out.println("-----------------------------------");
+                }
             }
+
         }
 
     }
