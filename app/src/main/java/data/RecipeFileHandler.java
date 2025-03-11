@@ -56,7 +56,7 @@ public class RecipeFileHandler {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
                 writer.newLine();
                 writer.write(recipeName);
-                writer.write(", ");
+                writer.write(",");
                 writer.write(ingredients);
             } catch (IOException e) {
                 System.out.println("Error reading file:" + e.getMessage());
